@@ -17,8 +17,10 @@ html5_animated_login_screen
 │   │   ├── chrome.png
 │   │   ├── edge.png
 │   │   ├── firefox.png
+│   │   ├── html.png
 │   │   ├── opera.png
-│   │   └── Peek 07-07-2020 17-08.gif
+│   │   ├── Peek 07-07-2020 17-08.gif
+│   │   └── safari.png
 │   ├── icons
 │   │   ├── adb-24px 1.png
 │   │   └── lock-24px 1.png
@@ -28,9 +30,9 @@ html5_animated_login_screen
 ├── css
 │   └── styles.css
 ├── index.html
-└── js
-    └── script.js
-
+├── js
+│   └── script.js
+└── README.md
 ```
 
 ## Browser Support
