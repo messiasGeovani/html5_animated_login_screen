@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background: no-repeat url('../assets/img/saga-geek-background-00-mobile.png');
+    background-size: cover;
+    background-attachment: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+*, button, input {
+    border: 0;
+    outline: 0;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+
+:root {
+    --primary: linear-gradient(180deg, #002943 0%, #2A4554 47.4%, #013454 93.75%), #002943;
+    --secondary: #2D5D7B;
+    --tertiary: #FF4086;
+    --input: #A4A4A4;
+    --border: #265D69;
+    --white: #FFFFFF;
+}
+
+.container {
+    height: 538px;
+    width: 327px;
+
+    margin-right: 20vw;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-between;
+
+    animation-name: fade;
+    animation-duration: .5s;
+
+    border: 1.5px solid var(--border);
+
+    background: var(--primary);
+}
+
+.container > img {
+    height: 150px;
+    width: 200px;
+}
+
+.container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container > div + div {
+    margin-bottom: 50px;
+}
+
+.input-wrapper {
+    max-width: 220px;
+
+    overflow: hidden;
+
+    animation: move .5s backwards;
+}
+
+.input-wrapper:nth-child(2) {
+    animation-delay: .15s;
+}
+
+input {
+    width: 100%;
+    height: 36px;
+
+    padding: 0 10px 0 40px;
+    
+    color: var(--white);
+    background: var(--secondary);
+
+    position: relative;
+}
+
+input::placeholder {
+    color: var(--input);
+}
+
+input ~ img {
+    position: relative;
+    top: -29px;
+    left: 5px;
+
+    transition: 180ms ease-in-out;
+
+    color: var(--input)
+}
+
+.container > div:last-child {
+    width: calc(100% - 70px);
+}
+
+button {
+    height: 36px;
+    width: 100%;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    border-radius: 50px;
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+
+    animation: move .5s backwards;
+    animation-delay: .20s;
+
+    color: var(--white);
+    background-color: var(--tertiary);
+}
+
+button:hover {
+    transition: opacity .2s;
+    opacity: 0.7;
+}
+
+button:active {
+    transition: opacity .2s;
+    opacity: 0.4;
+}
+
+span {
+    font-size: 10px;
+    color: var(--white);
+    margin-top: 20px;
+
+    cursor: pointer;
+
+    animation: move .5s backwards;
+    animation-delay: .25s;
+}
+
+span:hover {
+    transition: opacity .2s;
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+span:active {
+    transition: opacity .2s;
+    opacity: 0.4;
+}
+
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    } to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes move {
+    from {
+        opacity: 0;
+        transform: translateX(-35%);
+    } to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.form-hide {
+    animation: hide .5s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes hide {
+    from {
+        transform: translateY(0);
+    } to {
+        transform: translateY(100vh);
+    }
+}
+
+.validate-error {
+    animation: nono .2s linear, fade paused;
+    animation-iteration-count: 2;
+}
+
+@keyframes nono {
+    0% {
+        transform: translateX(0);
+    } 35% {
+        transform: translateX(-15%);
+    } 70% {
+        transform: translateX(15%);
+    } 100% {
+        transform: translateX(0);
+    }
+}
